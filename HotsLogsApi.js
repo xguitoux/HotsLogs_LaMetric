@@ -29,8 +29,31 @@ module.exports = {
     },
     getPlayerStats: function(headers, parameters, callback) {
 
-        var url = "https://api.hotslogs.com/Public/Players/" + parameters.PlayerID;
+        // console.log("parameters.battleTagNumber");
+        // console.log(parameters.battleTagNumber);
+        // console.log("parameters.battleTag");
+        // console.log(parameters.battleTag);
+        var regionCode = "0";
+        var battleTag = parameters.battleTag + "_" + parameters.battleTagNumber;
+        switch (parameters.Region) {
+            case "US":
+                regionCode = "1";
+                break;
+            case "EU":
+                regionCode = "2";
+                break;
+            case "KR":
+                regionCode = "4";
+                break;
+            case "CN":
+                regionCode = "5";
+                break;
 
+        }
+
+        ///var url = "https://api.hotslogs.com/Public/Players/" + parameters.PlayerID;
+        var url = "https://api.hotslogs.com/Public/Players/" + regionCode + "/" + battleTag;
+        console.log(url);
         var postHeader = {
             'User-Agent': headers.host,
             'Accept': 'application/json',

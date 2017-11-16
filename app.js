@@ -24,7 +24,7 @@ var HotsLogApi = require('./HotsLogsApi.js')
 
 
 app.get('/getData', function(req, res) {
-    //    console.log(req.query);
+    console.log(req.query);
     HotsLogApi.getPlayerStats(req.headers, req.query, function(err, response, data) {
         if (err || response.statusCode != 200) {
             if (err) {
@@ -60,25 +60,25 @@ app.get('/getData', function(req, res) {
                     'icon': 'i280',
                 };
                 index++;
-                //                console.log(element.LeagueID);
+
                 switch (element.LeagueID) {
                     case 0:
-                        frame.icon = "i635";
+                        frame.icon = "i635"; // Master icon
                         break;
                     case 1:
-                        frame.icon = "i5273";
+                        frame.icon = "i5273"; // Diams icon
                         break;
                     case 2:
-                        frame.icon = "i5271";
+                        frame.icon = "i5271"; // Plat icon
                         break;
                     case 3:
-                        frame.icon = "i5274";
+                        frame.icon = "i5274"; // Gold icon
                         break;
                     case 4:
-                        frame.icon = "i5270";
+                        frame.icon = "i5270"; // Silver icon
                         break;
                     case 5:
-                        frame.icon = "i5269";
+                        frame.icon = "i5269"; // Bronze icon
                         break;
                 }
                 responseObj.frames.push(frame);
