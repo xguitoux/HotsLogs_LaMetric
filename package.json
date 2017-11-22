@@ -1,9 +1,14 @@
 {
     "name": "hots-logs",
     "version": "1.0.0",
-    "private": true,
+    "description": "HOTS Logs LaMetric app",
+    "main": "server.js",
     "scripts": {
-        "start": "node ./bin/www"
+        "start": "node server.js"
+    },
+    "engine": {
+        "node": "*",
+        "npm": "*"
     },
     "dependencies": {
         "body-parser": "~1.18.2",
@@ -13,5 +18,15 @@
         "jade": "~1.11.0",
         "morgan": "~1.9.0",
         "request": "~2.83.0"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xguitoux/HotsLogs_LaMetric.git"
+    },
+    "author": "Guillaume M <xguitoux@gmail.com>",
+    "license": "CC-BY-1.0",
+    "bugs": {
+        "url": "https://github.com/xguitoux/HotsLogs_LaMetric/issues"
+    },
+    "homepage": "https://github.com/xguitoux/HotsLogs_LaMetric"
 }
