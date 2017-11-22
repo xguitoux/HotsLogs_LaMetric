@@ -4,13 +4,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// var server = require('server'),
-//     chai = require('chai'),
-//     chaiHTTP = require('chai-http'),
-//     should = chai.should();
-
-// chai.use(chaiHTTP);
-
 var index = require('./routes/index');
 
 var app = express();
