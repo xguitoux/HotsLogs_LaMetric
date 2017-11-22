@@ -9,4 +9,5 @@ var server = http.createServer(app);
 
 server.listen(server_port, server_ip_address, function() {
     console.log("Listening on " + server_ip_address + ", server_port " + server_port)
+    console.log("ENV VAR " + process.env.OPENSHIFT_NODEJS_IP + ", server_port " + process.env.OPENSHIFT_NODEJS_IP)
 });
