@@ -6,9 +6,6 @@ module.exports = {
      * returns Response called API method
      */
     getData: function(url, header, queryParams, callback) {
-        // console.log("GET: ", url);
-        // console.log("QS: ", queryParams);
-        // console.log("Headers: ", header);
 
         request.get({
             url: url,
@@ -29,10 +26,6 @@ module.exports = {
     },
     getPlayerStats: function(headers, parameters, callback) {
 
-        // console.log("parameters.battleTagNumber");
-        // console.log(parameters.battleTagNumber);
-        // console.log("parameters.battleTag");
-        // console.log(parameters.battleTag);
         var regionCode = "0";
         var battleTag = parameters.battleTag + "_" + parameters.battleTagNumber;
         switch (parameters.Region) {
@@ -51,7 +44,6 @@ module.exports = {
 
         }
 
-        ///var url = "https://api.hotslogs.com/Public/Players/" + parameters.PlayerID;
         var url = "https://api.hotslogs.com/Public/Players/" + regionCode + "/" + battleTag;
         console.log(url);
         var postHeader = {

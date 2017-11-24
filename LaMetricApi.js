@@ -21,12 +21,8 @@ module.exports = {
             spaceLessLeagues.push(element);
         });
 
-        //console.log(responseObj);
-
         if (!data) {
-            //console.log("Error: ", response.statusCode);
             return false;
-            //res.status(response.statusCode).send(response.body);
         } else {
 
             data.LeaderboardRankings.forEach(element => {
