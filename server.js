@@ -1,7 +1,6 @@
 var express = require('express'),
     path = require('path'),
     logger = require('morgan'),
-    //cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     http = require('http'),
     index = require('./routes/index'),
@@ -21,11 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.get('/', function(req, res) {
-    console.log("A la racine de l'app");
-});
-
 app.get('/env', function(req, res) {
     console.log(process.env);
 });
@@ -36,11 +30,11 @@ app.get('/getData', function(req, res) {
         if (err || response.statusCode != 200) {
             if (err) {
                 console.log(err);
-                return res.status(500).send(err)
+                return res.status(500).send(err);
             } else {
                 return res.status(response.statusCode).send(response.body);
             }
-        };
+        }
 
         var jsonResponse = LaMetricApi.buildResponse(req, data);
 
@@ -51,7 +45,7 @@ app.get('/getData', function(req, res) {
             console.log("Response: ", jsonResponse);
             return res.status(200).json(jsonResponse);
         }
-    })
+    });
 
 });
 
